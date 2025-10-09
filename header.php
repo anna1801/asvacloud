@@ -14,7 +14,37 @@
 <header id="header">
     <div class="container">
         <div class="row">
-            
+            <div class="col-md-3 col-5">
+                <?php
+                    $header_logo = get_field('header_logo', 'option');
+                    if ($header_logo) {
+                        echo '<div class="header-logo"><img src="' . esc_url($header_logo['url']) . '" alt="' . esc_attr($header_logo['alt']) . '"></div>';
+                    } else {
+                        echo get_bloginfo('name');
+                    }
+                ?>
+            </div>
+            <div class="col-md-6 col-5">
+                <?php
+                    wp_nav_menu( array(
+                        'theme_location' => 'header-menu',
+                        'container'      => 'nav',       // wraps in <nav>
+                        'container_class'=> 'main-nav',  // add custom class
+                        'menu_class'     => 'menu',      // class for <ul>
+                    ) );
+                ?>
+            </div>
+            <div class="col-md-3 col-2">
+                <?php
+                    $header_cta = get_field('header_cta', 'option');
+                    if ($header_cta) {
+                        $url    = $header_cta['url'];
+                        $title  = $header_cta['title'];
+                        $target = $header_cta['target'] ? $header_cta['target'] : '_self';
+                        echo '<div class="header-cta"><a href="' . esc_url($url) . '" target="' . esc_attr($target) . '">' . esc_html($title) . '</a></div>';
+                    }
+                ?>
+            </div>
         </div>
     </div>
 </header>
