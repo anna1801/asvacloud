@@ -18,13 +18,13 @@ h6 {
     font-weight: bold;
 }
 body:not(.home) h1 {
-    font-size: var(--font-4xl);
+    font-size: var(--font-5xl);
 }
 body.home h1 {
-    font-size: var(--font-3xl);
+    font-size: var(--font-4xl);
 }
 h2 {
-    font-size: var(--font-2xl);
+    font-size: var(--font-3xl);
 }
 h3 {
     font-size: var(--font-xl);

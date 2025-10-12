@@ -5,7 +5,7 @@
         if ( is_front_page() ) {
             get_template_part('template/hero-front-page');  // Hero Banner - Front page
         } else {
-            echo '<p>This is a regular page</p>';
+            get_template_part('template/hero-inner-page');  // Hero Banner - Inner page
         }
     ?>
 

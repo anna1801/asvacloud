@@ -64,13 +64,13 @@
                         $short_code = get_sub_field('short_code'); 
 
                         if($column_type == 'content') {
-                            $align = ' text-' .$text_align;
+                            $align = $text_align;
                         } else {
                             $align = '';
                         }
 
                         if($description_font_size) {
-                            $text_size = 'var(--font-s)ize: '.$description_font_size.';';
+                            $text_size = 'style="--font-size: var('.$description_font_size.');"';
                         } else {
                             $text_size = '';
                         }

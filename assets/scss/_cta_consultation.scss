@@ -1,0 +1,37 @@
+.cta_consultation {
+    background-color: var(--bg-color);
+    &.bg-image {
+      background-image: var(--bg-image);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .content {
+        display: grid;
+        @media (min-width: 768px) {
+            gap: 32px;
+        }
+        @media (max-width: 767px) {
+            gap: 24px;
+        }
+        h2 {
+            font-size: var(--font-5xl);
+        }
+        h3 {
+            font-weight: 500;
+            @media (min-width: 992px) {
+                width: 70%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        .btn {
+            width: max-content;
+            margin-left: auto;
+            margin-right: auto;
+            @media (min-width: 768px) {
+                margin-top: 8px;
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+.image_box {
+  background-color: var(--bg-color);
+  &.bg-image {
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .intro {
+    text-align: center;
+    @media (min-width: 768px) {
+      margin-bottom: 60px;
+    }
+    @media (max-width: 767px) {
+      margin-bottom: 40px;
+    }
+  }
+  .row {
+    row-gap: 40px;
+    .content {
+      .text-editor {
+        margin-left: auto;
+        margin-right: auto;
+        @media (min-width: 992px) {
+          width: 95%;
+        }
+      }
+      .image {
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}

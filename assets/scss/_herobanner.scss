@@ -1,3 +1,4 @@
+// Front page
 .hero-front-page {
     background-color: var(--bg-color);
 
@@ -93,8 +94,55 @@
     }
 }
 
+// Inner page
+.hero-inner-page {
+    background-color: var(--bg-color);
 
+    @media (min-width: 768px) {
+        padding-top: 80px;
+        padding-bottom: 80px;
+        height: 616px;
 
+        &.bg-md-image {
+            background-image: var(--bg-md-image);
+            background-size: cover;
+            background-position: bottom center;
+            background-repeat: no-repeat;
+        }
+    }
+    @media (max-width: 767px) {
+        padding-top: 50px;
+        padding-bottom: 50px;
 
-
-
+        &.bg-sm-image {
+            background-image: var(--bg-sm-image);
+            background-size: cover;
+            background-position: bottom center;
+            background-repeat: no-repeat;
+        }
+    }
+    .container,
+    .row {
+        height: 100%;
+    }
+    .content {
+        text-align: center;
+        display: grid;
+        row-gap: 12px;
+        h1,
+        h3,
+        .text-editor {
+            margin: 0;
+        }
+        h3,
+        .text-editor {
+            font-weight: 500;
+            font-size: var(--font-xl);
+            line-height: 135%;
+        }
+        .btn {
+            margin: 12px auto 0px;
+            width: max-content;
+        }
+    }
+}

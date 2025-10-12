@@ -18,7 +18,7 @@
                 <?php
                     $header_logo = get_field('header_logo', 'option');
                     if ($header_logo) {
-                        echo '<div class="header-logo"><img src="' . esc_url($header_logo['url']) . '" alt="' . esc_attr($header_logo['alt']) . '"></div>';
+                        echo '<div class="header-logo"><a href="'.get_site_url().'"><img src="' . esc_url($header_logo['url']) . '" alt="' . esc_attr($header_logo['alt']) . '"></a></div>';
                     } else {
                         echo get_bloginfo('name');
                     }

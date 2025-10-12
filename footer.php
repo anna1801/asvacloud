@@ -52,7 +52,7 @@
                 <?php
                     $footer_logo = get_field('footer_logo', 'option');
                     if($footer_logo) {
-                        echo '<div class="footer-logo"> <img src="'.$footer_logo['url'].'" alt="'.$footer_logo['alt'].'"></div>';
+                        echo '<div class="footer-logo"><a href="'.get_site_url().'"><img src="'.$footer_logo['url'].'" alt="'.$footer_logo['alt'].'"></a></div>';
                     }
 
                     $footer_about = get_field('footer_about', 'option');

@@ -1,17 +1,18 @@
 <?php
 /* General */
     $general = get_sub_field('general');
+    $appearance = $general['appearance'];
     $section_class = $general['section_class'];
     $section_id = $general['section_id'];
     $padding_top = $general['padding_top'];
     $padding_bottom = $general['padding_bottom'];
     $content_width = $general['content_width'];
-    $background_color = $general['background_color'];
-    $background_image = $general['background_image'];
+    $content_alignment = $general['content_alignment']; 
     $column_width_lg = $general['column_width_lg'];
     $column_width_md = $general['column_width_md'];
     $column_width_sm = $general['column_width_sm'];
-    $text_align = $general['text_align'];
+    $background_color = $general['background_color'];
+    $background_image = $general['background_image'];
 
     if($section_id) {
         $id = 'id="' . $section_id .'"';
@@ -39,14 +40,14 @@
         $style = '';
     }
 
-    $class = $padding_top . ' ' . $padding_bottom . ' ' . $section_class . ' ' . $bg_class;
+    $class = $appearance . ' ' . $padding_top . ' ' . $padding_bottom . ' ' . $section_class . ' ' . $bg_class;
 
 /* Intro */
     $intro = get_sub_field('intro');
     $sub_title = $intro['sub_title'];
     $title = $intro['title'];
 ?>
-<section class="appearance-default expertise <?php echo $class; ?>" <?php echo $id; ?> <?php echo $style; ?>>
+<section class="team <?php echo $class; ?>" <?php echo $id; ?> <?php echo $style; ?>>
     <div class="<?php echo $content_width; ?>">
 
         <?php
@@ -63,20 +64,26 @@
         ?>
 
         <?php
-            if( have_rows('column') ): 
+            if( have_rows('team_member') ): 
                 echo '<div class="row justify-content-center">';
-                while( have_rows('column') ): the_row();
-                    $title = get_sub_field('title');
-                    $description = get_sub_field('description');
-                    if($title || $description) :
-                        echo '<div class="'.$column_width_lg.' '.$column_width_md.' '.$column_width_sm. ' ' .$text_align.'">';
-                            echo '<div class="block">';
-                                if($title) :
-                                    echo '<h3>'.$title.'</h3>';
+                while( have_rows('team_member') ): the_row();
+                    $profile_picture = get_sub_field('profile_picture');
+                    $name = get_sub_field('name');
+                    $position = get_sub_field('position');
+                    if($profile_picture || $name || $position) :
+                        echo '<div class="'.$column_width_lg.' '.$column_width_md.' '.$column_width_sm.' '.$content_alignment.'">';
+                            echo '<div class="team-member">';
+                                if($profile_picture) :
+                                    echo '<div class="image"><img src="'.$profile_picture.'" alt="'.$name.'"></div>';
                                 endif;
-                                if($description) :
-                                    echo '<div class="text-editor">'.$description.'</div>';
-                                endif;
+                                echo '<div class="details">';
+                                    if($name) :
+                                        echo '<h3>'.$name.'</h3>';
+                                    endif;
+                                    if($position) :
+                                        echo '<div class="text-editor">'.$position.'</div>';
+                                    endif;
+                                echo '</div>';
                             echo '</div>';
                         echo '</div>';
                     endif;
