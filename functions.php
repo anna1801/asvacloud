@@ -17,7 +17,9 @@ add_action( 'after_setup_theme', 'theme_setup' );
 /* Register menu */
     function register_my_menu() {
       register_nav_menu('header-menu',__( 'Header Menu' ));
-      register_nav_menu('footer-menu',__( 'Footer menu' ));
+      register_nav_menu('footer-menu-1',__( 'Footer menu 1' ));
+      register_nav_menu('footer-menu-2',__( 'Footer menu 2' ));
+      register_nav_menu('footer-menu-3',__( 'Footer menu 3' ));
     }
     add_action( 'init', 'register_my_menu' );
 /* Register menu end */
@@ -56,10 +58,11 @@ function theme_scripts() {
     wp_enqueue_script('bootstrap-js',get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.bundle.min.js',array('jquery'), _S_VERSION, true );
     wp_enqueue_script( 'custom-js', get_template_directory_uri() . '/assets/js/main.min.js', array(), _S_VERSION, true );
     wp_enqueue_script( 'additional-js', get_template_directory_uri() . '/assets/custom/js/custom.js', array(), _S_VERSION, true );
-  //font
-    wp_enqueue_style( 'google-fonts', get_template_directory_uri() . '/assets/font/Montserrat.css', false );
 }
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
+
+// Disable automatic <p> and <br> tags in Contact Form 7 forms
+add_filter('wpcf7_autop_or_not', '__return_false');
 
 // custom functions
     require get_template_directory() . '/includes/custom.php';

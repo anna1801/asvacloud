@@ -11,10 +11,10 @@
 </head>
 <body <?php body_class(); ?>>
 
-<header id="header">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-5">
+<header id="site-header">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-xl-2 col-lg-4 col-4">
                 <?php
                     $header_logo = get_field('header_logo', 'option');
                     if ($header_logo) {
@@ -24,7 +24,7 @@
                     }
                 ?>
             </div>
-            <div class="col-md-6 col-5">
+            <div class="col-xl-8 col-lg-1 col-1">
                 <?php
                     wp_nav_menu( array(
                         'theme_location' => 'header-menu',
@@ -34,17 +34,39 @@
                     ) );
                 ?>
             </div>
-            <div class="col-md-3 col-2">
-                <?php
-                    $header_cta = get_field('header_cta', 'option');
-                    if ($header_cta) {
-                        $url    = $header_cta['url'];
-                        $title  = $header_cta['title'];
-                        $target = $header_cta['target'] ? $header_cta['target'] : '_self';
-                        echo '<div class="header-cta"><a href="' . esc_url($url) . '" target="' . esc_attr($target) . '">' . esc_html($title) . '</a></div>';
-                    }
-                ?>
+            <div class="col-xl-2 col-lg-7 col-7">
+                <div class="header-right">
+                    <?php
+                        $header_cta = get_field('header_cta', 'option');
+                        if ($header_cta) {
+                            $url    = $header_cta['url'];
+                            $title  = $header_cta['title'];
+                            $target = $header_cta['target'] ? $header_cta['target'] : '_self';
+                            echo '<div class="header-cta appearance-default"><a href="' . esc_url($url) . '" target="' . esc_attr($target) . '" class="btn">' . esc_html($title) . '</a></div>';
+                        }
+                    ?>
+                    <div class="harmburger">
+                        <button id="harmburger-toggle" class="harmburger-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle menu">
+                            <div class="line-1"></div>
+                            <div class="line-2"></div>
+                            <div class="line-3"></div>
+                        </button>
+                        <nav id="mobile-navigation" class="mobile-navigation" role="navigation" aria-label="Primary menu">
+                            <?php
+                                wp_nav_menu([
+                                'theme_location' => 'header-menu',
+                                'menu_id'        => 'mobile-header-menu',
+                                'container'      => false,
+                                'fallback_cb'    => false,
+                                ]);
+                            ?>
+                        </nav>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </header>
+<div class="menu-overlay" id="menu-overlay"></div>
+
+<main>

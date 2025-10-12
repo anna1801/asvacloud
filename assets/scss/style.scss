@@ -2,7 +2,11 @@
 @import 'mixins';
 @import 'header';
 @import 'colors';
-
-body {
-  font-family: 'Montserrat', sans-serif;
-}
+@import 'general';
+@import 'footer';
+@import 'fonts';
+@import 'herobanner';
+@import 'expertise';
+@import 'section_by_column';
+@import 'responsive';
+@import 'form';

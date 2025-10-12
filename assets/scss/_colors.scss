@@ -1,4 +1,7 @@
-$primary: #FFFFFF;
-$secondary: #29282B;
-$accent: #246BCB;
-$text: #575757;
+:root {
+    --e-global-color-primary: #FFFFFF;
+    --e-global-color-secondary: #29282B;
+    --e-global-color-text: #575757;
+    --e-global-color-accent: #246BCB;
+    --theme-bg-color: #018BED;
+}
