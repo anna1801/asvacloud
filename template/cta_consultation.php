@@ -36,7 +36,8 @@
 
     $class = $appearance . ' ' . $section_class . ' ' . $bg_class;
 
-    $cta_consultation_show_hide = get_sub_field('cta_consultation_show_hide');
+    $cta_consultation_show_hide = get_field('cta_consultation_show_hide');
+
     if($cta_consultation_show_hide == true) :
 ?>
 <section class="cta_consultation padding-tp-default padding-bt-default <?php echo $class; ?>" <?php echo $id; ?> <?php echo $style; ?>>

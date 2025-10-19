@@ -1,10 +1,7 @@
 <?php
     $appearance = get_field('appearance');
-    $sub_title = get_field('sub_title');
     $heading = get_field('heading');
     $content = get_field('content');
-    $cta = get_field('cta');
-
     $background_color = get_field('background_color');
     $background_img_md = get_field('background_img_md');
     $background_img_sm = get_field('background_img_sm');
@@ -19,7 +16,7 @@
         $bg_md_class = 'bg-md-image';
         $bg_md_image = '--bg-md-image: url('.$background_img_md.');';
     } else {
-        $bg_class = '';
+        $bg_md_class = '';
         $bg_md_image = '';
     }
 
@@ -36,29 +33,25 @@
     } else {
         $style = '';
     }
+
+    if($heading || $content) : 
 ?>
-<section class="hero-inner-page <?php echo $appearance . ' ' . $bg_md_class . ' ' .$bg_sm_class; ?>" id="hero-front-page" <?php echo $style; ?>>
-    <div class="container">
-        <div class="row align-items-center justify-content-center">
-            <div class="col-lg-7 col-md-12 col-sm-12">
-                <div class="content">
-                    <?php
-                        if($sub_title) : 
-                            echo '<h3>'.$sub_title.'</h3>';
-                        endif;
-                        if($heading) : 
-                            echo '<h1>'.$heading.'</h1>';
-                        endif;
-                        if($content) :
-                            echo '<div class="text-editor"><p>'.$content.'</p></div>';
-                        endif;
-                        
-                        if($cta) :
-                            echo '<a hre="'.$cta['url'].'" target="'.$cta['target'].'" class="btn">'.$cta['title'].'</a>';
-                        endif;
-                    ?>
+    <section class="hero-inner-page <?php echo $appearance . ' ' . $bg_md_class . ' ' .$bg_sm_class; ?>" id="hero-front-page" <?php echo $style; ?>>
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-8 col-md-12 col-sm-12">
+                    <div class="content">
+                        <?php
+                            if($heading) : 
+                                echo '<h1>'.$heading.'</h1>';
+                            endif;
+                            if($content) :
+                                echo '<div class="text-editor"><p>'.$content.'</p></div>';
+                            endif;
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+<?php endif; ?>

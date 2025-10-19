@@ -7,6 +7,12 @@
         background-repeat: no-repeat;
     }
     .row-layout {
+        .content {
+            .text-editor {
+                font-size: var(--font-size);
+                line-height: var(--line-height);
+            }
+        }
         .icon-list {
             margin-top: 40px;
             display: grid;

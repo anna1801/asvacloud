@@ -1,0 +1,154 @@
+.resources {
+    .item {
+        .featured-image {
+            background-color: var(--e-global-color-primary);
+            border-radius: 100px 8px 100px 8px;
+            @media (min-width: 1200px) {
+                height: 450px;
+            }
+            @media (max-width: 1199px) and (min-width: 992px) {
+                height: 300px;
+            }
+            @media (max-width: 991px) and (min-width: 768px) {
+                height: 300px;
+            }
+            @media (max-width: 767px) {
+                height: 300px;
+            }
+            img {
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 100px 8px 100px 8px;
+            }
+        }
+        .details {
+            @media (min-width: 768px) {
+                margin-top: 43px;
+            }
+            @media (max-width: 767px) {
+                margin-top: 32px;
+            }
+            h3 {
+                color: var(--e-global-color-secondary);
+            }
+            .excerpt {
+                margin-top: 16px;
+            }
+            .permalink {
+                display: block;
+                margin-top: 20px;
+                color: var(--e-global-color-accent);
+                font-weight: 700;
+                text-decoration: none;
+                svg {
+                    margin-left: 12px;
+                    transition: 0.3s;
+                }
+                &:hover {
+                    svg {
+                        margin-left: 24px;
+                        transition: 0.3s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+body.category {
+    .hero-category-page {
+        background-color: var(--bg-color);
+
+        @media (min-width: 768px) {
+            padding-top: 80px;
+            padding-bottom: 80px;
+            height: 616px;
+    
+            &.bg-md-image {
+                background-image: var(--bg-md-image);
+                background-size: cover;
+                background-position: bottom center;
+                background-repeat: no-repeat;
+            }
+        }
+        @media (max-width: 767px) {
+            padding-top: 50px;
+            padding-bottom: 50px;
+    
+            &.bg-sm-image {
+                background-image: var(--bg-sm-image);
+                background-size: cover;
+                background-position: bottom center;
+                background-repeat: no-repeat;
+            }
+        }
+        .container,
+        .row {
+            height: 100%;
+        }
+        .content {
+            text-align: center;
+            display: grid;
+            row-gap: 12px;
+            h2,
+            .text-editor {
+                margin: 0;
+            }
+            .text-editor {
+                font-weight: 500;
+                font-size: var(--font-xl);
+                line-height: 135%;
+            }
+        }
+    }
+    .resources {
+        .row {
+            @media (min-width: 992px) {
+                row-gap: 64px;
+            }
+            @media (max-width: 991px) {
+                row-gap: 50px;
+            }
+        }
+    }
+    .taxonomy-term-list {
+        @media (min-width: 992px) {
+            margin-bottom: 64px;
+        }
+        @media (max-width: 991px) {
+            margin-bottom: 50px;
+        }
+        ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            border: 1px solid #E5E5E5;
+            width: max-content;
+            margin: 0px auto;
+            border-radius: 40px;
+            padding: 8px;
+            li {
+                padding: 16px 24px;
+                border-radius: 55px;
+                a {
+                    color: var(--e-global-color-text);
+                    text-decoration: none;
+                    font-weight: 500;
+                }
+                &.active {
+                    background-color: var(--theme-bg-color);
+                    a {
+                        color: var(--e-global-color-primary);
+                        font-weight: 600;
+                    }
+                }
+                &:not(.active):hover {
+                    a {
+                        color: var(--e-global-color-accent);
+                    }
+                }
+            }
+        }
+    }
+}

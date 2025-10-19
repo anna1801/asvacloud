@@ -19,6 +19,7 @@ function wpdocs_codex_career_new_init() {
       'search_items'          => __( 'Search Careers', 'textdomain' ),
       'parent_item_colon'     => __( 'Parent Careers:', 'textdomain' ),
       'not_found'             => __( 'No industires found.', 'textdomain' ),
+      /*
       'not_found_in_trash'    => __( 'No industires found in Trash.', 'textdomain' ),
       'featured_image'        => _x( 'Desktop Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'textdomain' ),
       'set_featured_image'    => _x( 'Set cover image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
@@ -27,6 +28,7 @@ function wpdocs_codex_career_new_init() {
       'archives'              => _x( 'Career archives', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'textdomain' ),
       'insert_into_item'      => _x( 'Insert into Career', 'Overrides the “Insert into post”/”Insert into page” phrase (used when inserting media into a post). Added in 4.4', 'textdomain' ),
       'uploaded_to_this_item' => _x( 'Uploaded to this Career', 'Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post). Added in 4.4', 'textdomain' ),
+      */
       'filter_items_list'     => _x( 'Filter industires list', 'Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4', 'textdomain' ),
       'items_list_navigation' => _x( 'Careers list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'textdomain' ),
       'items_list'            => _x( 'Careers list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'textdomain' ),
@@ -34,8 +36,8 @@ function wpdocs_codex_career_new_init() {
 
   $args = array(
       'labels'             => $labels,
-      'public'             => true,
-      'publicly_queryable' => true,
+      'public'             => false,
+      'publicly_queryable' => false,
       'taxonomies'         => array('career-category'),
       'show_ui'            => true,
       'show_in_menu'       => true,
@@ -46,7 +48,7 @@ function wpdocs_codex_career_new_init() {
       'hierarchical'       => false,
       'menu_position'      => null,
       'menu_icon'          => 'dashicons-format-aside',
-      'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+      'supports'           => array( 'title', 'editor', 'author', 'excerpt', 'comments' ),
   );
 
   register_post_type( 'careers', $args );
@@ -73,6 +75,8 @@ function career_category_taxonomy() {
 
   register_taxonomy('career-category',array('careers'), array(
     'hierarchical' => true,
+    'public'       => false,
+    'publicly_queryable' => false,
     'labels' => $labels,
     'show_ui' => true,
     'show_in_rest' => true,

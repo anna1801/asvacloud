@@ -19,6 +19,36 @@
             padding: 10px 40px 10px 0px;
         }
     }
+    .floating-label {
+        position: relative;
+        label {
+          position: absolute;
+          left: 0px;
+          top: 12px;
+          padding-left: 20px;
+          bottom: auto;
+          //transform: translateY(-50%);
+          pointer-events: none;
+          transition: transform .18s ease, top .18s ease, font-size .18s ease, color .18s ease;
+          z-index: 2;
+        }
+        .wpcf7-form-control {
+          background: transparent;
+          outline: none;
+          box-sizing: border-box;
+          &::placeholder {
+            color: transparent;
+          }
+        }
+        &:focus-within {
+          label {
+            transform: none;
+          }
+        }
+        &.filled label {
+          transform: none;
+        }
+    }
     .wpcf7-not-valid-tip {
         font-size: var(--font-xs);
         position: absolute;
@@ -32,11 +62,15 @@
         right: 0;
         bottom: 0;
         left: auto;
+        z-index: 3;
     }
     .wpcf7-submit {
         margin-top: 18px;
         margin-left: auto;
         display: block;
+    }
+    .wpcf7-spinner {
+        position: absolute;
     }
     .wpcf7-response-output {
         color: var(--e-global-color-secondary);
@@ -78,7 +112,7 @@
                     color: color-mix(in srgb, var(--e-global-color-primary) 80%, transparent);
                 }
                 &.wpcf7-not-valid {
-                    border-color: #FFC107;
+                    border-color: #FFC107 !important;
                 }
             }
         }
@@ -99,7 +133,10 @@
             padding: 30px;
         }
         label {
-            color: var(--e-global-color-accent);
+            color: var(--e-global-color-text);
+            padding-bottom: 5px;
+            background-color: var(--e-global-color-primary);
+            width: 100%;
         }
         .wpcf7-form-control-wrap {
             input {
@@ -108,7 +145,7 @@
                     color: var(--e-global-color-text);
                 }
                 &.wpcf7-not-valid {
-                    border-color: #ff0000;
+                    border-color: #ff0000 !important;
                 }
             }
         }

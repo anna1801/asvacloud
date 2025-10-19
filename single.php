@@ -1,13 +1,19 @@
 <?php
-// The Template for displaying all single posts.
-get_header(); ?> 
-    <?php 
-        if(have_posts()):
-            while(have_Posts()):the_post(); 
-                $img = wp_get_attachment_url(get_post_thumbnail_id($post->ID), "full");
-                    the_content();
-            endwhile;
-        endif;
-        wp_reset_query();
-    ?>
-<?php get_footer(); ?>
+
+get_header();
+
+    get_template_part('template/hero-cpt-page');
+
+    echo '<section class="resources appearance-default padding-tp-default padding-bt-default">';
+        echo '<div class="container">';
+            echo '<div class="content">';
+                the_content();
+            echo '</div>';
+        echo '</div>';
+    echo '</section>';
+
+    get_template_part('template/cta_consultation');
+    
+get_footer(); 
+
+?>

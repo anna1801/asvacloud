@@ -41,3 +41,26 @@
   });
 })();
 /* end*/
+
+/* Change background color to lst word in the heading of CTA Consultation */
+document.querySelectorAll('.cta_consultation h2').forEach(el => {
+  const words = el.innerHTML.trim().split(' ');
+  const lastWord = words.pop();
+  el.innerHTML = `${words.join(' ')} <span class="last-word">${lastWord}</span>`;
+});
+/* end */
+
+/* Toggle career content */
+jQuery(document).ready(function($) {
+  if ($('.career-category-block').length) {
+    $('.career-item.has_content').click(function(e) {
+      if ($(e.target).closest('.apply-now, a, button, svg').length) return;
+      var $thisItem = $(this);
+      var $thisContent = $thisItem.find('.item-content');
+      $('.career-item.has_content').not($thisItem).removeClass('active').find('.item-content').slideUp();
+      $thisContent.slideToggle();
+      $thisItem.toggleClass('active');
+    });
+  }
+});
+/* end */

@@ -1,4 +1,3 @@
-
 <?php
     //general
     $general = get_sub_field('general');
@@ -70,11 +69,19 @@
                         }
 
                         if($description_font_size) {
-                            $text_size = 'style="--font-size: var('.$description_font_size.');"';
+                            $text_size = $description_font_size;
                         } else {
                             $text_size = '';
                         }
+
+                        if($description_font_size == '--font-xl' || $description_font_size == '--font-2xl') {
+                            $text_line_height = '150%';
+                        } else {
+                            $text_line_height = '';
+                        }
                         
+                        $font_style = 'style="--font-size: var('.$description_font_size.'); --line-height: '.$text_line_height.'; "';
+
                         if($section_id) {
                             $id = 'id="' . $section_id .'"';
                         } else {
@@ -98,7 +105,7 @@
                                             echo '<h2>'.$title.'</h2>';
                                         endif;
                                         if($description) :
-                                            echo '<div class="text-editor" '.$text_size.'>'.$description.'</div>';
+                                            echo '<div class="text-editor" '.$font_style.'>'.$description.'</div>';
                                         endif;
                                         if ( !empty($content['icon_list']) && is_array($content['icon_list']) ):
                                             echo '<div class="icon-list">';
