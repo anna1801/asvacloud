@@ -14,8 +14,10 @@ jQuery(document).ready(function($){
     });
 
     function updateArrows_reviews() {
-        var currentSlide = $reviews_slider.slick('slickCurrentSlide');
-        var totalSlides = $reviews_slider.slick('getSlick').slideCount;
+        var slickObj = $reviews_slider.slick('getSlick');
+        var currentSlide = slickObj.currentSlide;
+        var totalSlides = slickObj.slideCount;
+        var slidesToShow = slickObj.options.slidesToShow;
 
         if (currentSlide === 0) {
             $('.reviews-pagination .arrow-prev').addClass('slick-disabled');
@@ -23,7 +25,7 @@ jQuery(document).ready(function($){
             $('.reviews-pagination .arrow-prev').removeClass('slick-disabled');
         }
 
-        if (currentSlide === totalSlides - 1) {
+        if (currentSlide >= totalSlides - slidesToShow) {
             $('.reviews-pagination .arrow-next').addClass('slick-disabled');
         } else {
             $('.reviews-pagination .arrow-next').removeClass('slick-disabled');
@@ -69,8 +71,10 @@ jQuery(document).ready(function($){
     }
 
     function updateArrows_resources() {
-        var currentSlide = $resources_slider.slick('slickCurrentSlide');
-        var totalSlides = $resources_slider.slick('getSlick').slideCount; console.log(currentSlide);
+        var slickObj = $resources_slider.slick('getSlick');
+        var currentSlide = slickObj.currentSlide;
+        var totalSlides = slickObj.slideCount;
+        var slidesToShow = slickObj.options.slidesToShow;
 
         if (currentSlide === 0) {
             $('.resources-pagination .arrow-prev').addClass('slick-disabled');
@@ -78,7 +82,7 @@ jQuery(document).ready(function($){
             $('.resources-pagination .arrow-prev').removeClass('slick-disabled');
         }
 
-        if (currentSlide === totalSlides - 1) {
+        if (currentSlide >= totalSlides - slidesToShow) {
             $('.resources-pagination .arrow-next').addClass('slick-disabled');
         } else {
             $('.resources-pagination .arrow-next').removeClass('slick-disabled');

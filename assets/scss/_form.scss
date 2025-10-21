@@ -106,7 +106,8 @@
             color: var(--e-global-color-primary);
         }
         .wpcf7-form-control-wrap {
-            input {
+            input,
+            textarea {
                 color: var(--e-global-color-primary);
                 &::placeholder {
                     color: color-mix(in srgb, var(--e-global-color-primary) 80%, transparent);
@@ -139,7 +140,8 @@
             width: 100%;
         }
         .wpcf7-form-control-wrap {
-            input {
+            input,
+            textarea {
                 color: var(--e-global-color-secondary);
                 &::placeholder {
                     color: var(--e-global-color-text);

@@ -54,5 +54,12 @@
                 }
             }
         }
+        .shortcode {
+            .wpcf7-form {
+                textarea {
+                    height: 50px;
+                }
+            }
+        }
     }
 }

@@ -1246,6 +1246,10 @@ footer#site-footer .footer-container .copyright p {
   }
 }
 
+.section_by_column .row-layout .shortcode .wpcf7-form textarea {
+  height: 50px;
+}
+
 /* section width */
 :root {
   --site-max: calc(300px + 1440px);
@@ -1577,27 +1581,33 @@ footer#site-footer .footer-container .copyright p {
   color: var(--e-global-color-primary);
 }
 
-.appearance-theme .wpcf7-form .wpcf7-form-control-wrap input {
+.appearance-theme .wpcf7-form .wpcf7-form-control-wrap input,
+.appearance-theme .wpcf7-form .wpcf7-form-control-wrap textarea {
   color: var(--e-global-color-primary);
 }
 
-.appearance-theme .wpcf7-form .wpcf7-form-control-wrap input::-webkit-input-placeholder {
+.appearance-theme .wpcf7-form .wpcf7-form-control-wrap input::-webkit-input-placeholder,
+.appearance-theme .wpcf7-form .wpcf7-form-control-wrap textarea::-webkit-input-placeholder {
   color: color-mix(in srgb, var(--e-global-color-primary) 80%, transparent);
 }
 
-.appearance-theme .wpcf7-form .wpcf7-form-control-wrap input:-ms-input-placeholder {
+.appearance-theme .wpcf7-form .wpcf7-form-control-wrap input:-ms-input-placeholder,
+.appearance-theme .wpcf7-form .wpcf7-form-control-wrap textarea:-ms-input-placeholder {
   color: color-mix(in srgb, var(--e-global-color-primary) 80%, transparent);
 }
 
-.appearance-theme .wpcf7-form .wpcf7-form-control-wrap input::-ms-input-placeholder {
+.appearance-theme .wpcf7-form .wpcf7-form-control-wrap input::-ms-input-placeholder,
+.appearance-theme .wpcf7-form .wpcf7-form-control-wrap textarea::-ms-input-placeholder {
   color: color-mix(in srgb, var(--e-global-color-primary) 80%, transparent);
 }
 
-.appearance-theme .wpcf7-form .wpcf7-form-control-wrap input::placeholder {
+.appearance-theme .wpcf7-form .wpcf7-form-control-wrap input::placeholder,
+.appearance-theme .wpcf7-form .wpcf7-form-control-wrap textarea::placeholder {
   color: color-mix(in srgb, var(--e-global-color-primary) 80%, transparent);
 }
 
-.appearance-theme .wpcf7-form .wpcf7-form-control-wrap input.wpcf7-not-valid {
+.appearance-theme .wpcf7-form .wpcf7-form-control-wrap input.wpcf7-not-valid,
+.appearance-theme .wpcf7-form .wpcf7-form-control-wrap textarea.wpcf7-not-valid {
   border-color: #FFC107 !important;
 }
 
@@ -1630,27 +1640,33 @@ footer#site-footer .footer-container .copyright p {
   width: 100%;
 }
 
-.appearance-default .wpcf7-form .wpcf7-form-control-wrap input {
+.appearance-default .wpcf7-form .wpcf7-form-control-wrap input,
+.appearance-default .wpcf7-form .wpcf7-form-control-wrap textarea {
   color: var(--e-global-color-secondary);
 }
 
-.appearance-default .wpcf7-form .wpcf7-form-control-wrap input::-webkit-input-placeholder {
+.appearance-default .wpcf7-form .wpcf7-form-control-wrap input::-webkit-input-placeholder,
+.appearance-default .wpcf7-form .wpcf7-form-control-wrap textarea::-webkit-input-placeholder {
   color: var(--e-global-color-text);
 }
 
-.appearance-default .wpcf7-form .wpcf7-form-control-wrap input:-ms-input-placeholder {
+.appearance-default .wpcf7-form .wpcf7-form-control-wrap input:-ms-input-placeholder,
+.appearance-default .wpcf7-form .wpcf7-form-control-wrap textarea:-ms-input-placeholder {
   color: var(--e-global-color-text);
 }
 
-.appearance-default .wpcf7-form .wpcf7-form-control-wrap input::-ms-input-placeholder {
+.appearance-default .wpcf7-form .wpcf7-form-control-wrap input::-ms-input-placeholder,
+.appearance-default .wpcf7-form .wpcf7-form-control-wrap textarea::-ms-input-placeholder {
   color: var(--e-global-color-text);
 }
 
-.appearance-default .wpcf7-form .wpcf7-form-control-wrap input::placeholder {
+.appearance-default .wpcf7-form .wpcf7-form-control-wrap input::placeholder,
+.appearance-default .wpcf7-form .wpcf7-form-control-wrap textarea::placeholder {
   color: var(--e-global-color-text);
 }
 
-.appearance-default .wpcf7-form .wpcf7-form-control-wrap input.wpcf7-not-valid {
+.appearance-default .wpcf7-form .wpcf7-form-control-wrap input.wpcf7-not-valid,
+.appearance-default .wpcf7-form .wpcf7-form-control-wrap textarea.wpcf7-not-valid {
   border-color: #ff0000 !important;
 }
 
@@ -2373,6 +2389,11 @@ footer#site-footer .footer-container .copyright p {
 
 .resources .item .details h3 {
   color: var(--e-global-color-secondary);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .resources .item .details .excerpt {
