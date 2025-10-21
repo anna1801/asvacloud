@@ -399,7 +399,7 @@ header#site-header .header-right .header-cta {
     transition: max-height 0.4s ease;
   }
   header#site-header .header-right .harmburger .mobile-navigation #mobile-header-menu .menu-item-has-children .sub-menu li {
-    padding-top: 12.1px;
+    padding-top: 12px;
   }
   header#site-header .header-right .harmburger .mobile-navigation #mobile-header-menu .menu-item-has-children .sub-menu li .sub-menu {
     padding-left: 20px;
