@@ -119,15 +119,23 @@ body.category {
         @media (max-width: 991px) {
             margin-bottom: 50px;
         }
+        border-radius: 40px;
+        border: 1px solid #E5E5E5;
+        padding: 8px;
+        margin: 0px auto;
+        overflow-x: scroll;
+        max-width: max-content;
+        width: 100%;
+        &::-webkit-scrollbar {
+            display: none;
+        }
         ul {
             display: flex;
             justify-content: center;
             list-style: none;
-            border: 1px solid #E5E5E5;
+            margin: 0;
+            padding: 0;
             width: max-content;
-            margin: 0px auto;
-            border-radius: 40px;
-            padding: 8px;
             li {
                 padding: 16px 24px;
                 border-radius: 55px;

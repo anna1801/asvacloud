@@ -365,7 +365,9 @@
                             $image = get_the_post_thumbnail_url($post->ID, 'full');
                             echo'<div class="item">';
                                 echo'<div class="featured-image">';
-                                    echo'<img src="'.$image.'" alt="'.$title.'">';
+                                    if($image) :
+                                        echo'<img src="'.$image.'" alt="'.$title.'">';
+                                    endif;
                                 echo'</div>';
                                 echo'<div class="details">';
                                     echo '<h3>'.$title.'</h3>';

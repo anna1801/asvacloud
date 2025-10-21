@@ -64,3 +64,74 @@ jQuery(document).ready(function($) {
   }
 });
 /* end */
+
+// Mobile submenu
+document.addEventListener("DOMContentLoaded", function () {
+  const menu = document.querySelector("#mobile-header-menu");
+  menu.querySelectorAll(".menu-item-has-children > a").forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const parent = this.parentElement;
+      const submenu = parent.querySelector(".sub-menu");
+      // Close all sibling submenus at this level
+      const siblings = Array.from(parent.parentElement.children).filter(
+        (li) => li !== parent && li.classList.contains("menu-item-has-children")
+      );
+      siblings.forEach((sib) => {
+        const sibSubmenu = sib.querySelector(".sub-menu");
+        if (sib.classList.contains("open")) {
+          sibSubmenu.style.maxHeight = sibSubmenu.scrollHeight + "px";
+          requestAnimationFrame(() => {
+            sibSubmenu.style.maxHeight = "0";
+          });
+          sib.classList.remove("open");
+        }
+      });
+      // Toggle this submenu
+      if (parent.classList.contains("open")) {
+        // closing
+        submenu.style.maxHeight = submenu.scrollHeight + "px";
+        requestAnimationFrame(() => {
+          submenu.style.maxHeight = "0";
+        });
+        parent.classList.remove("open");
+      } else {
+        // opening
+        submenu.style.maxHeight = submenu.scrollHeight + "px";
+        parent.classList.add("open");
+
+        submenu.addEventListener(
+          "transitionend",
+          () => {
+            submenu.style.maxHeight = "none"; // allow natural height
+          },
+          { once: true }
+        );
+      }
+    });
+  });
+});
+//End*/
+
+// On mobile show the active resource categry first
+document.addEventListener('DOMContentLoaded', function() {
+  const activeItem = document.querySelector('.taxonomy-term-list li.active');
+  const container = document.querySelector('.taxonomy-term-list');
+  if (activeItem && container) {
+      container.scrollLeft = activeItem.offsetLeft - 18;
+  }
+});
+/*
+document.addEventListener('DOMContentLoaded', function() {
+  const activeItem = document.querySelector('.taxonomy-term-list li.active');
+  if (activeItem) {
+      // Scroll the active item into view horizontally
+      activeItem.scrollIntoView({
+          behavior: 'smooth', // optional, remove if you want instant
+          inline: 'start',   // aligns the item to center of container
+          block: 'nearest'
+      });
+  }
+});
+*/
+// end

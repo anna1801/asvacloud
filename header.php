@@ -31,6 +31,7 @@
                         'container'      => 'nav',       // wraps in <nav>
                         'container_class'=> 'main-nav',  // add custom class
                         'menu_class'     => 'menu',      // class for <ul>
+                        'walker'         => new Custom_Submenu_Walker(),
                     ) );
                 ?>
             </div>

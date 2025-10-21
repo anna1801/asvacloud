@@ -86,6 +86,28 @@ add_filter('wpcf7_autop_or_not', '__return_false');
   add_action( 'init', 'remove_editor_for_event_cpt' );
 // end
 
+// Submenu wrapper 
+class Custom_Submenu_Walker extends Walker_Nav_Menu {
+  // Start the submenu
+  function start_lvl( &$output, $depth = 0, $args = null ) {
+    $indent = str_repeat("\t", $depth);
+    $submenu_class = ($depth > 0) ? 'sub-menu inner-sub-menu' : 'sub-menu';
+    // Only wrap the first submenu (depth 0)
+    if ($depth === 0) {
+      $output .= "\n$indent<div class=\"submenu-wrapper\"><div class=\"container\">\n";
+    }
+    $output .= "$indent<ul class=\"$submenu_class\">\n";
+  }
+  // End the submenu
+  function end_lvl( &$output, $depth = 0, $args = null ) {
+    $indent = str_repeat("\t", $depth);
+    $output .= "$indent</ul>\n";
+    if ($depth === 0) {
+      $output .= "$indent</div></div>\n";
+    }
+  }
+}
+// end
 
 
 
