@@ -11,6 +11,8 @@
     $column_width_lg = $general['column_width_lg'];
     $column_width_md = $general['column_width_md'];
     $column_width_sm = $general['column_width_sm'];
+    $type = $general['type'];
+    $justify_content = $general['justify_content'];
     $background_color = $general['background_color'];
     $background_image = $general['background_image'];
 
@@ -65,24 +67,48 @@
 
         <?php
             if( have_rows('icon_box') ): 
-                echo '<div class="row justify-content-center">';
+                echo '<div class="row type-'.$type.' '.$justify_content.'">';
                 while( have_rows('icon_box') ): the_row();
                     $image = get_sub_field('image');
                     $heading = get_sub_field('heading');
                     $content = get_sub_field('content');
                     if($image || $heading || $content) :
                         echo '<div class="'.$column_width_lg.' '.$column_width_md.' '.$column_width_sm.' '.$content_alignment.'">';
-                            echo '<div class="content">';
-                                if($image) :
-                                    echo '<div class="image"><img src="'.$image['url'].'" alt="'.$image['alt'].'"></div>';
-                                endif;
-                                if($heading) :
-                                    echo '<h3>'.$heading.'</h3>';
-                                endif;
-                                if($content) :
-                                    echo '<div class="text-editor">'.$content.'</div>';
-                                endif;
-                            echo '</div>';
+                            if($type == 'default') {
+                                echo '<div class="content">';
+                                    if($image) :
+                                        echo '<div class="image"><img src="'.$image['url'].'" alt="'.$image['alt'].'"></div>';
+                                    endif;
+                                    if($heading) :
+                                        echo '<h3>'.$heading.'</h3>';
+                                    endif;
+                                    if($content) :
+                                        echo '<div class="text-editor">'.$content.'</div>';
+                                    endif;
+                                echo '</div>';
+                            } 
+                            elseif($type == 'flipbox') {
+                                echo '<div class="content flip-card">';
+                                    echo '<div class="flip-card-inner">';
+                                        echo '<div class="flip-card-front flip">';
+                                            if($image) :
+                                                echo '<div class="image"><img src="'.$image['url'].'" alt="'.$image['alt'].'" class="icon"></div>';
+                                            endif;
+                                            if($heading) :
+                                                echo '<h3 class="value-title">'.$heading.'</h3>';
+                                            endif;
+                                        echo '</div>';
+                                        echo '<div class="flip-card-back flip">';
+                                            if($heading) :
+                                                echo '<h3 class="value-title">'.$heading.'</h3>';
+                                            endif;
+                                            if($content) :
+                                                echo '<div class="text-editor value-description">'.$content.'</div>';
+                                            endif;
+                                        echo '</div>';
+                                    echo '</div>';
+                                echo '</div>';
+                            }
                         echo '</div>';
                     endif;
                 endwhile;
