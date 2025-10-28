@@ -1194,6 +1194,10 @@ footer#site-footer .footer-container .copyright p {
   line-height: var(--line-height);
 }
 
+.section_by_column .row-layout .content h2 {
+  margin-top: 0;
+}
+
 .section_by_column .row-layout .icon-list {
   margin-top: 40px;
   display: -ms-grid;
