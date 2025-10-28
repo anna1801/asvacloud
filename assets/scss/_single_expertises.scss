@@ -88,6 +88,9 @@
 //section
     .expertise_services { 
         position: relative;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top;
         background-image: url('data:image/svg+xml,<svg width="1920" height="2505" viewBox="0 0 1920 2505" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="1954.5" cy="347.5" r="505.5" stroke="%235DCCF4" stroke-opacity="0.23" stroke-width="110"/><rect x="-446" y="1978" width="1178" height="1178" rx="589" fill="white" fill-opacity="0.1"/></svg>');
         &::after {
             content: '';
