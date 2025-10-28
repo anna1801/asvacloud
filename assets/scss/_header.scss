@@ -117,7 +117,7 @@ header {
                                             padding: 10px 0px;
                                             border-bottom: 1px solid #9F9F9F;
                                             transition: color 0.3s;
-                                            font-size: var(--font-l);
+                                            font-size: calc(var(--font-l) - 2px);
                                             font-weight: 600;
                                             color: var(--e-global-color-secondary);
                                         }

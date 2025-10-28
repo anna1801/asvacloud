@@ -231,7 +231,7 @@ header#site-header .main-nav #menu-header-menu li.menu-item-has-children .submen
   border-bottom: 1px solid #9F9F9F;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
-  font-size: var(--font-l);
+  font-size: calc(var(--font-l) - 2px);
   font-weight: 600;
   color: var(--e-global-color-secondary);
 }
@@ -1250,6 +1250,20 @@ footer#site-footer .footer-container .copyright p {
   height: 50px;
 }
 
+.section_by_column .row-layout .col:nth-child(odd) .featured-image {
+  border-radius: 8px 8px 8px 100px;
+  aspect-ratio: 16 / 11;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.section_by_column .row-layout .col:nth-child(even) .featured-image {
+  border-radius: 8px 8px 100px 8px;
+  aspect-ratio: 16 / 11;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 /* section width */
 :root {
   --site-max: calc(300px + 1440px);
@@ -1898,7 +1912,7 @@ footer#site-footer .footer-container .copyright p {
 
 @media (min-width: 992px) {
   .single-expertises .intro_content .content {
-    font-size: var(--font-2xl);
+    font-size: calc(var(--font-2xl) - 4px);
   }
 }
 
@@ -2025,6 +2039,13 @@ footer#site-footer .footer-container .copyright p {
   }
 }
 
+.single-expertises .expertise_services .expertise_services_list .expertise_services_row:nth-child(2n) .featured-image img {
+  border-radius: 100px 8px 8px 8px;
+  aspect-ratio: 16 / 14;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 @media (min-width: 1025px) {
   .single-expertises .expertise_services .expertise_services_list .expertise_services_row:nth-child(2n) .content {
     margin-left: 40px;
@@ -2035,6 +2056,13 @@ footer#site-footer .footer-container .copyright p {
   .single-expertises .expertise_services .expertise_services_list .expertise_services_row:not(:nth-child(2n)) .featured-image {
     margin-left: 40px;
   }
+}
+
+.single-expertises .expertise_services .expertise_services_list .expertise_services_row:not(:nth-child(2n)) .featured-image img {
+  border-radius: 8px 8px 100px 8px;
+  aspect-ratio: 16 / 14;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media (min-width: 1025px) {

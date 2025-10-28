@@ -61,5 +61,21 @@
                 }
             }
         }
+        .col {
+            &:nth-child(odd) {
+                .featured-image {
+                    border-radius: 8px 8px 8px 100px;
+                    aspect-ratio: 16 / 11;
+                    object-fit: cover;
+                }
+            }
+            &:nth-child(even) {
+                .featured-image {
+                    border-radius: 8px 8px 100px 8px;
+                    aspect-ratio: 16 / 11;
+                    object-fit: cover;
+                }
+            }
+        }
     }
 }

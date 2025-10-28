@@ -3,7 +3,7 @@
     .intro_content {
         .content {
             @media (min-width: 992px) {
-                font-size: var(--font-2xl);
+                font-size: calc(var(--font-2xl) - 4px);
             }
             @media (max-width: 991px) {
                 font-size: var(--font-xl);
@@ -115,6 +115,11 @@
                         @media (min-width: 1025px) {
                             margin-right: 40px;
                         }
+                        img {
+                            border-radius: 100px 8px 8px 8px;
+                            aspect-ratio: 16 / 14;
+                            object-fit: cover;
+                        }
                     }
                     .content {
                         @media (min-width: 1025px) {
@@ -126,6 +131,11 @@
                     .featured-image {
                         @media (min-width: 1025px) {
                             margin-left: 40px;
+                        }
+                        img {
+                            border-radius: 8px 8px 100px 8px;
+                            aspect-ratio: 16 / 14;
+                            object-fit: cover;
                         }
                     }
                     .content {

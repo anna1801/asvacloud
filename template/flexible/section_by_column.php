@@ -89,7 +89,7 @@
                         }
                         $class = $column_width_lg.' '.$column_width_md.' '.$column_width_sm. ' '.$align ;
 
-                        echo '<div class="'.$class.'">';
+                        echo '<div class="'.$class.' col">';
                             echo '<div class="'.$section_class.'" '.$id.'>';
                                 if($column_type == 'content') {
                                     $sub_title = $content['sub_title'];
