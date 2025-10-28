@@ -56,6 +56,8 @@
                         $section_class = get_sub_field('section_class');
                         $text_align = get_sub_field('text_align');
                         $description_font_size = get_sub_field('description_font_size');
+                        $order_md = get_sub_field('order_md');
+                        $order_sm = get_sub_field('order_sm');
                         // Type
                         $column_type = get_sub_field('column_type');
                         $content = get_sub_field('content');
@@ -82,6 +84,18 @@
                         
                         $font_style = 'style="--font-size: var('.$description_font_size.'); --line-height: '.$text_line_height.'; "';
 
+                        if($order_md) {
+                            $order_md_style = '--order-md: '.$order_md;
+                        } else {
+                            $order_md_style = '';
+                        }
+
+                        if($order_sm) {
+                            $order_sm_style = '--order-sm: '.$order_sm;
+                        } else {
+                            $order_sm_style = '';
+                        }
+
                         if($section_id) {
                             $id = 'id="' . $section_id .'"';
                         } else {
@@ -89,7 +103,7 @@
                         }
                         $class = $column_width_lg.' '.$column_width_md.' '.$column_width_sm. ' '.$align ;
 
-                        echo '<div class="'.$class.' column">';
+                        echo '<div class="'.$class.' column" style="'.$order_md_style.';'.$order_sm_style.'" >';
                             echo '<div class="'.$section_class.'" '.$id.'>';
                                 if($column_type == 'content') {
                                     $sub_title = $content['sub_title'];

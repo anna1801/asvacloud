@@ -1262,6 +1262,22 @@ footer#site-footer .footer-container .copyright p {
   border-radius: 0px;
 }
 
+@media (max-width: 992px) and (min-width: 768px) {
+  .section_by_column .row-layout .column {
+    -webkit-box-ordinal-group: var(--order-md);
+        -ms-flex-order: var(--order-md);
+            order: var(--order-md);
+  }
+}
+
+@media (max-width: 767px) {
+  .section_by_column .row-layout .column {
+    -webkit-box-ordinal-group: var(--order-sm);
+        -ms-flex-order: var(--order-sm);
+            order: var(--order-sm);
+  }
+}
+
 /* section width */
 :root {
   --site-max: calc(300px + 1440px);
