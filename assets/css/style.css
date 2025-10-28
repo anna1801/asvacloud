@@ -1250,12 +1250,16 @@ footer#site-footer .footer-container .copyright p {
   height: 50px;
 }
 
-.section_by_column .row-layout .col:nth-child(odd) .featured-image img {
+.section_by_column .row-layout .column:nth-child(odd) .featured-image img {
   border-radius: 8px 8px 8px 100px;
 }
 
-.section_by_column .row-layout .col:nth-child(even) .featured-image img {
+.section_by_column .row-layout .column:nth-child(even) .featured-image img {
   border-radius: 8px 8px 100px 8px;
+}
+
+.section_by_column .row-layout .column .no-radius .featured-image img {
+  border-radius: 0px;
 }
 
 /* section width */
@@ -3204,9 +3208,9 @@ body.single-events .event .details .location {
 }
 
 #careerform .modal-content .row .wpcf7 .wpcf7-form .custom-file-upload .upload-label {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-inline-box !important;
+  display: -ms-inline-flexbox !important;
+  display: inline-flex !important;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -3272,7 +3276,7 @@ body.single-events .event .details .location {
 
 @media (min-width: 1024px) {
   .page-template-template-contact-page .contact_form .row-layout .content {
-    margin-right: 100px;
+    margin-right: 50px;
   }
 }
 

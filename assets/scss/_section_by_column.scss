@@ -61,7 +61,7 @@
                 }
             }
         }
-        .col {
+        .column {
             &:nth-child(odd) {
                 .featured-image {
                     img {
@@ -71,9 +71,16 @@
             }
             &:nth-child(even) {
                 .featured-image {
-                   img {
+                    img {
                         border-radius: 8px 8px 100px 8px;
-                   }
+                    }
+                }
+            }
+            .no-radius {
+                .featured-image {
+                    img {
+                        border-radius:0px;
+                    }
                 }
             }
         }
