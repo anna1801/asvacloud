@@ -77,6 +77,8 @@ document.addEventListener('DOMContentLoaded', function() {
     label.style.display = 'inline-flex';
     fileName.style.display = 'none';
     removeBtn.style.display = 'none';
+    const errorTip = wrapper.querySelector('.wpcf7-not-valid-tip');
+    if (errorTip) errorTip.remove();
   });
 });
 // End
@@ -110,7 +112,7 @@ document.addEventListener('wpcf7mailsent', function(event) {
     var removeBtn = form.querySelector('.remove-file');
     if (removeBtn) removeBtn.style.display = 'none';
     var uploadLabel = form.querySelector('.upload-label');
-    if (uploadLabel) uploadLabel.style.display = 'inline-block';
+    if (uploadLabel) uploadLabel.style.display = 'inline-flex';
 
   }, 2000);
 }, false);

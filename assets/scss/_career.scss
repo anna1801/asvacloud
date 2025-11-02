@@ -223,6 +223,7 @@
         }
         .wpcf7-form {
           height: 100%;
+          min-height: 602px;
           .agreement {
             font-size: 16px;
             line-height: 150%;
@@ -266,6 +267,7 @@
               width: 100%;
               bottom: -25px;
               top: auto;
+              font-size: 12px;
             }
           }
           .floating-label {
@@ -332,8 +334,14 @@
             input[type="file"] {
               display: none;
             }
+            .wpcf7-form-control-wrap {
+              width: 100%;
+              position: absolute;
+              bottom: 5px;
+              transform: scale(0.9);
+            }
             .upload-label {
-              display: inline-flex !important;
+              display: inline-flex;
               align-items: center;
               cursor: pointer;
               justify-content: center;
