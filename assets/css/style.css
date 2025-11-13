@@ -2472,6 +2472,93 @@ footer#site-footer .footer-container .copyright p {
   display: block;
 }
 
+.gallery .acf-gallery.carousal .acf-gallery-item {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .gallery .acf-gallery.carousal .slick-list {
+    padding-right: 100px;
+    padding-left: 100px;
+  }
+}
+
+@media (max-width: 767px) {
+  .gallery .acf-gallery.carousal .slick-list {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+.gallery .acf-gallery.carousal .slick-list:before, .gallery .acf-gallery.carousal .slick-list::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .gallery .acf-gallery.carousal .slick-list:before, .gallery .acf-gallery.carousal .slick-list::after {
+    width: 130px;
+  }
+}
+
+@media (max-width: 767px) {
+  .gallery .acf-gallery.carousal .slick-list:before, .gallery .acf-gallery.carousal .slick-list::after {
+    width: 50px;
+  }
+}
+
+.gallery .acf-gallery.carousal .slick-list:before {
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #fff), to(transparent));
+  background-image: linear-gradient(90deg, #fff 50%, transparent 100%);
+  left: 0;
+}
+
+.gallery .acf-gallery.carousal .slick-list:after {
+  background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, #fff), to(transparent));
+  background-image: linear-gradient(270deg, #fff 50%, transparent 100%);
+  left: auto;
+}
+
+.gallery .acf-gallery.carousal .slick-arrow {
+  z-index: 2;
+  width: auto;
+  height: auto;
+}
+
+.gallery .acf-gallery.carousal .slick-arrow::before {
+  display: none;
+}
+
+.gallery .acf-gallery.carousal .slick-arrow.slick-prev {
+  left: 0;
+}
+
+.gallery .acf-gallery.carousal .slick-arrow.slick-next {
+  right: 0;
+}
+
+@media (max-width: 992px) and (min-width: 768px) {
+  .gallery .acf-gallery.carousal .slick-arrow {
+    width: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .gallery .acf-gallery.carousal .slick-arrow {
+    width: 35px;
+  }
+}
+
+.gallery .acf-gallery.carousal .slick-arrow svg {
+  width: 100%;
+  height: auto;
+}
+
 .resources .item .featured-image {
   background-color: var(--e-global-color-primary);
   border-radius: 100px 8px 100px 8px;

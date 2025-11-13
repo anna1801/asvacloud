@@ -72,6 +72,11 @@
     if($images) :
 ?>
     <section class="gallery <?php echo $class; ?>" <?php echo $id; ?> <?php echo $style; ?>>
+    <script>
+        var gallery_count_lg = <?php echo !empty($gallery_count_lg) ? $gallery_count_lg : '3'; ?>;
+        var gallery_count_md = <?php echo !empty($gallery_count_md) ? $gallery_count_md : '2'; ?>;
+        var gallery_count_sm = <?php echo !empty($gallery_count_sm) ? $gallery_count_sm : '1'; ?>;
+    </script>
         <div class="<?php echo $content_width; ?>">
             <?php
                 if($sub_title || $title) :
