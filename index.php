@@ -6,6 +6,6 @@
                 the_content();
             endwhile;
         endif;
-        wp_reset_query();
+        wp_reset_query(); 
     ?>
 <?php get_footer(); ?>
